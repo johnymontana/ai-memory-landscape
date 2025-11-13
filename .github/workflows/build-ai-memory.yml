@@ -6,7 +6,7 @@ on:
       - main
       - claude/follow-the-011CV4WuGF3ZnQyJAUYnJy4F
     paths:
-      - 'ai-memory-landscape/**'
+      - './**'
       - '.github/workflows/build-ai-memory.yml'
   workflow_dispatch:
 
@@ -33,10 +33,10 @@ jobs:
       - name: Build AI Memory landscape
         run: |
           landscape2 build \
-          --data-file ./ai-memory-landscape/data.yml \
-          --settings-file ./ai-memory-landscape/settings.yml \
-          --guide-file ./ai-memory-landscape/guide.yml \
-          --logos-path ./ai-memory-landscape/logos \
+          --data-file data.yml \
+          --settings-file settings.yml \
+          --guide-file guide.yml \
+          --logos-path logos \
           --output-dir /tmp/landscape
       - name: Prepare build output
         run: |
